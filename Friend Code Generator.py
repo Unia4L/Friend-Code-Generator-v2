@@ -62,6 +62,7 @@ def wiiu():
     print("Completed! Generated "+ str(total) +" codes!")
     ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.0")
     a = input("Press enter to close! Thanks for using!")
+    close()
 
 def switch():
     time.sleep(0.2)
@@ -87,6 +88,7 @@ def switch():
     print("Completed! Generated "+ str(total) +" codes!")
     ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.0")
     a = input("Press enter to close! Thanks for using!")
+    close()
         
 
 menu()
