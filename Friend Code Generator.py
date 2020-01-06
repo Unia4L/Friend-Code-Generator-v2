@@ -4,7 +4,7 @@ import time
 import os
 from random import randint
 clear = lambda: os.system('cls')
-ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.0")
+ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.1")
 
 def menu():
     print("Last Update 4th January 2020")
