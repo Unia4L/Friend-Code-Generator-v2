@@ -4,11 +4,11 @@ import time
 import os
 from random import randint
 clear = lambda: os.system('cls')
-ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.2")
+ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.3")
 
 def menu():
     choicemenu = 0
-    print("Last Update - 2nd February 2020")
+    print("Last Update - 13th February 2020")
     print("----------------------")
     print(" 1 - 3ds/Wii-U Friend Code Generator")
     print(" 2 - Switch Friend Code Generator")
@@ -41,6 +41,7 @@ def menu():
 
 def wiiu():
     time.sleep(0.2)
+    track = 100000
     os.remove("Codes.txt")
     file = open("Codes.txt","w")
     clear()
@@ -54,16 +55,23 @@ def wiiu():
     while total < amt:
         fcpt1 = str(randint(1000, 9999)) + "-" + str(randint(1000, 9999)) + "-" + str(randint(1000,9999))
         total = total+1
+        if total == track:
+            print(str(total) + " generated.")
+            track = track + 100000
         file.write(str(fcpt1)+"\n")
     clear()
     file.close()
-    print("Completed! Generated "+ str(total) +" codes!")
+    if total == 1:
+        print("Completed! Generated "+ str(total) +" code!")
+    else:
+        print("Completed! Generated "+ str(total) +" codes!")
     ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.2")
     a = input("Press enter to close! Thanks for using!")
     close()
 
 def switch():
     time.sleep(0.2)
+    track = 100000
     os.remove("Codes.txt")
     file = open("Codes.txt","w")
     clear()
@@ -77,10 +85,16 @@ def switch():
     while total < amt:
         fcpt1 = str(randint(1000, 9999)) + "-" + str(randint(1000, 9999)) + "-" + str(randint(1000,9999))
         total = total+1
+        if total == track:
+            print(str(total) + " generated.")
+            track = track + 100000
         file.write("SW-" + str(fcpt1)+"\n")
     clear()
     file.close()
-    print("Completed! Generated "+ str(total) +" codes!")
+    if total == 1:
+        print("Completed! Generated "+ str(total) +" code!")
+    else:
+        print("Completed! Generated "+ str(total) +" codes!")
     ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.2")
     a = input("Press enter to close! Thanks for using!")
     close()
