@@ -10,3 +10,5 @@ These are completly random and are not verified against a Nintendo server or any
 **So... is there any point?**
 
 Well, it depends. It's really just something I made because I realised nobody else has made it so I just wanted to get one out there. It may be useful one day, but who knows right now?
+
+Since 28/02/2020 -  Support added for Steam friend codes.
