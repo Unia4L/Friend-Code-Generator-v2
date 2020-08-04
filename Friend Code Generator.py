@@ -4,11 +4,12 @@ import time
 import os
 from random import randint
 clear = lambda: os.system('cls')
-ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.4")
+title = ctypes.windll.kernel32.SetConsoleTitleW
+name = "Friend code generator"
+ver = "2.0.5"
 
 def menu():
-    choicemenu = 0
-    print("Last Update - 28th February 2020")
+    print("")
     print("----------------------")
     print(" 1 - 3ds/Wii-U friend code generator")
     print(" 2 - Switch friend code generator")
@@ -17,6 +18,7 @@ def menu():
     print("-----------------------")
     print("")
     print("Type 1, 2, 3 or 4 then press ENTER")
+    title("[" + str(ver) + "] " + str(name))
     x = input("")
     if x == "1":
         clear()
@@ -63,7 +65,7 @@ def wiiu():
         fc = str(randint(1000, 9999)) + "-" + str(randint(1000, 9999)) + "-" + str(randint(1000,9999))
         total = total+1
         if total % 1000 == 0:
-            ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - " + str(round(total*pc)) + "% completed")
+            title(str(name) + " - " + str(round(total*pc)) + "% completed")
         file.write(str(fc)+"\n")
     clear()
     file.close()
@@ -71,7 +73,7 @@ def wiiu():
         print("Completed! Generated "+ str(total) +" code!")
     else:
         print("Completed! Generated "+ str(total) +" codes!")
-    ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.4")
+    title("Friend Code Generator - 2.0.4")
     input("Press enter to close! Thanks for using!")
     close()
 
@@ -92,7 +94,7 @@ def switch():
         fc = str(randint(1000, 9999)) + "-" + str(randint(1000, 9999)) + "-" + str(randint(1000,9999))
         total = total+1
         if total % 1000 == 0:
-            ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - " + str(round(total*pc)) + "% completed")
+            title(str(name) + " - " + str(round(total*pc)) + "% completed")
         file.write("SW-" + str(fc)+"\n")
     clear()
     file.close()
@@ -116,7 +118,7 @@ def steam():
         fc = str(randint(0,999999999))
         total = total+1
         if total % 100 == 0:
-            ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - " + str(round(total*pc)) + "% completed")
+            title(str(name) + " - " + str(round(total*pc)) + "% completed")
         file.write(str(fc)+"\n")
     clear()
     file.close()
@@ -124,7 +126,7 @@ def steam():
 
 def finish():
     print("Completed!")
-    ctypes.windll.kernel32.SetConsoleTitleW("Friend Code Generator - 2.0.4")
+    title("[" + str(ver) + "] " + str(name))
     input("Press enter to close.")
     exit()
 
