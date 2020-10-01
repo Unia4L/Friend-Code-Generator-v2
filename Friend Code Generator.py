@@ -66,7 +66,7 @@ def generate_codes(selection):
                     friend_code = "SW-" + friend_code
                 file.write(friend_code)
             else:
-                file.write(f'{randint(0, 999999999)}\n')
+                file.write('{}\n'.format(randint(0, 999999999)))
             ctypes.windll.kernel32.SetConsoleTitleW(
                 "{} - {:.2f}% completed".format(name, (counter + 1) * 100 / amount)
             )
