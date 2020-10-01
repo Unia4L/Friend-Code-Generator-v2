@@ -42,7 +42,7 @@ def menu():
                 print("Deleted codes!")
                 time.sleep(1)
                 continue
-        except (ValueError, IndexError):
+        except ValueError:
             print("Wrong input. Choose 1 to 4.")
             time.sleep(1.0)
             continue
